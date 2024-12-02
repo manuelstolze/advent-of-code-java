@@ -8,14 +8,15 @@ import java.util.List;
 public class AdventOfCodeFileReader implements AoCFileReader {
 
   public List<String> readFile(String filePath) {
+    List<String> lines = new java.util.ArrayList<>();
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
       String line;
       while ((line = reader.readLine()) != null) {
-        System.out.println(line);
+        lines.add(line);
       }
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return null;
+    return lines;
   }
 }

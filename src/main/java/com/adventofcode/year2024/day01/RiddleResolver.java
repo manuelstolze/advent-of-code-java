@@ -1,5 +1,8 @@
 package com.adventofcode.year2024.day01;
 
+import com.adventofcode.common.AdventOfCodeFileReader;
+import com.adventofcode.common.IRiddleResolver;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,8 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RiddleResolver {
-
+public class RiddleResolver implements IRiddleResolver {
   public RiddleResolver() {}
 
   public void solveRiddleOne(String[] args) {
