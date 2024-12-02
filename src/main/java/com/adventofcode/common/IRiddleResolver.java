@@ -4,12 +4,8 @@ import java.util.List;
 
 public interface IRiddleResolver {
 
-    void solveRiddleOne(String[] args);
+    int solveRiddleOne(List<String> lines);
 
-    //void solveRiddleOne(List<String> list);
-
-    void solveRiddleTwo(String[] args);
-
-    //void solveRiddleTwo(List<String> list);
+    int solveRiddleTwo(List<String> lines);
 
 }
