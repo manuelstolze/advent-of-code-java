@@ -4,33 +4,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum Direction {
-  HORIZONTAL,
-  VERTICAL,
-  DIAGONAL,
-  DIAGONAL_2,
-  REVERSE_HORIZONTAL,
-  REVERSE_VERTICAL,
-  REVERSE_DIAGONAL,
-  REVERSE_DIAGONAL_2;
+  HORIZONTAL_RIGHT,
+  HORIZONTAL_LEFT,
+
+  VERTICAL_UP,
+  VERTICAL_DOWN,
+
+  DIAGONAL_RIGHT_UP,
+  DIAGONAL_RIGHT_DOWN,
+  DIAGONAL_LEFT_UP,
+  DIAGONAL_LEFT_DOWN;
+
 
   public static List<Integer> getDirectionVectors(Direction direction){
     switch (direction) {
-      case HORIZONTAL:
+      case HORIZONTAL_RIGHT:
         return new ArrayList<>(List.of(0, 1));
-      case VERTICAL:
-        return new ArrayList<>(List.of(1, 0));
-      case DIAGONAL:
-        return new ArrayList<>(List.of(1, 1));
-        case DIAGONAL_2:
-          return new ArrayList<>(List.of(-1, 1));
-      case REVERSE_HORIZONTAL:
+      case HORIZONTAL_LEFT:
         return new ArrayList<>(List.of(0, -1));
-      case REVERSE_VERTICAL:
+      case VERTICAL_UP:
+        return new ArrayList<>(List.of(1, 0));
+      case VERTICAL_DOWN:
         return new ArrayList<>(List.of(-1, 0));
-      case REVERSE_DIAGONAL:
-        return new ArrayList<>(List.of(-1, -1));
-      case REVERSE_DIAGONAL_2:
+      case DIAGONAL_RIGHT_UP:
+        return new ArrayList<>(List.of(1, 1));
+      case DIAGONAL_RIGHT_DOWN:
         return new ArrayList<>(List.of(1, -1));
+      case DIAGONAL_LEFT_UP:
+        return new ArrayList<>(List.of(-1, 1));
+      case DIAGONAL_LEFT_DOWN:
+        return new ArrayList<>(List.of(-1, -1));
       default:
         throw new IllegalArgumentException("Invalid direction");
     }
