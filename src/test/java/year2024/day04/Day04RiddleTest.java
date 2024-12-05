@@ -4,9 +4,9 @@ import com.adventofcode.common.AdventOfCodeFileReader;
 import com.adventofcode.year2024.day04.Day04Riddle;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-
 import java.util.List;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Day04RiddleTest {
 

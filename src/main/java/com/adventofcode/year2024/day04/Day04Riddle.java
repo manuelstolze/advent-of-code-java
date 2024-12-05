@@ -1,10 +1,10 @@
 package com.adventofcode.year2024.day04;
 
-import com.adventofcode.common.IRiddleResolver;
+import com.adventofcode.common.resolver.AbstractRiddleSolver;
 
 import java.util.List;
 
-public class Day04Riddle implements IRiddleResolver {
+public class Day04Riddle extends AbstractRiddleSolver<List<String>> {
 
   private static final String TARGET_WORD_RIDDLE_ONE = "XMAS";
   private static final String TARGET_WORD_RIDDLE_TWO = "A";
