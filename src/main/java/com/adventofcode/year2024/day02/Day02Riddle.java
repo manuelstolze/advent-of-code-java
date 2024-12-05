@@ -1,14 +1,15 @@
 package com.adventofcode.year2024.day02;
 
-import com.adventofcode.common.IRiddleResolver;
+import com.adventofcode.common.resolver.AbstractRiddleSolver;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class Day02Riddle implements IRiddleResolver {
+public class Day02Riddle extends AbstractRiddleSolver<List<String>> {
 
   public Day02Riddle() {}
 
+  @Override
   public int solveRiddleOne(List<String> lines) {
     int numberOfSaveReports = 0;
     for (String line : lines) {

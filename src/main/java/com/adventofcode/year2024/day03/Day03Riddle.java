@@ -1,11 +1,11 @@
 package com.adventofcode.year2024.day03;
 
-import com.adventofcode.common.IRiddleResolver;
+import com.adventofcode.common.resolver.AbstractRiddleSolver;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Day03Riddle implements IRiddleResolver {
+public class Day03Riddle extends AbstractRiddleSolver<List<String>> {
 
   @Override
   public int solveRiddleOne(List<String> lines) {
