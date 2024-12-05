@@ -15,8 +15,8 @@ class WordSearchTest {
             {'D', 'E', 'F', 'G'}
     };
     WordSearch wordSearch = new WordSearch("CODE");
-    assertTrue(wordSearch.isWordPresent(grid, 0, 0, Direction.HORIZONTAL));
-    assertFalse(wordSearch.isWordPresent(grid, 0, 0, Direction.VERTICAL));
+    assertTrue(wordSearch.isWordPresent(grid, 0, 0, Direction.HORIZONTAL_RIGHT));
+    assertFalse(wordSearch.isWordPresent(grid, 0, 0, Direction.VERTICAL_UP));
   }
 
   @Test
@@ -27,9 +27,9 @@ class WordSearchTest {
             {'D', 'E', 'F', 'G'}
     };
     WordSearch wordSearch = new WordSearch("DEFG");
-    assertTrue(wordSearch.isWordPresent(grid, 2, 0, Direction.HORIZONTAL));
-    assertTrue(wordSearch.isWordPresent(grid, 1, 3, Direction.REVERSE_HORIZONTAL));
-    assertFalse(wordSearch.isWordPresent(grid, 2, 1, Direction.VERTICAL)); // Edge case
+    assertTrue(wordSearch.isWordPresent(grid, 2, 0, Direction.HORIZONTAL_RIGHT));
+    assertTrue(wordSearch.isWordPresent(grid, 1, 3, Direction.HORIZONTAL_LEFT));
+    assertFalse(wordSearch.isWordPresent(grid, 2, 1, Direction.VERTICAL_UP)); // Edge case
   }
 
   @Test
