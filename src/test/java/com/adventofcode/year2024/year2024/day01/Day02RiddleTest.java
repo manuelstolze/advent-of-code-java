@@ -1,4 +1,4 @@
-package year2024.day01;
+package com.adventofcode.year2024.year2024.day01;
 
 import com.adventofcode.year2024.day01.Day01Riddle;
 import org.junit.jupiter.api.Test;
