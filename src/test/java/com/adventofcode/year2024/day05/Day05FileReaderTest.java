@@ -1,4 +1,4 @@
-package com.adventofcode.year2024.year2024.day05;
+package com.adventofcode.year2024.day05;
 
 import com.adventofcode.year2024.day05.Day05FileReader;
 import com.adventofcode.year2024.day05.PageOrderingRules;
