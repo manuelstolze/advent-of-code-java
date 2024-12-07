@@ -1,4 +1,4 @@
-package com.adventofcode.year2024.year2024.day04;
+package com.adventofcode.year2024.day04;
 
 import com.adventofcode.year2024.day04.WordSearch;
 import com.adventofcode.common.Direction;

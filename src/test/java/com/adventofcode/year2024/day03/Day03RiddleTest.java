@@ -1,4 +1,4 @@
-package com.adventofcode.year2024.year2024.day03;
+package com.adventofcode.year2024.day03;
 
 import com.adventofcode.common.AdventOfCodeFileReader;
 import com.adventofcode.year2024.day03.Day03Riddle;
