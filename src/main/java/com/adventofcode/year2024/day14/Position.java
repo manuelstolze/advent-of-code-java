@@ -1,0 +1,47 @@
+package com.adventofcode.year2024.day14;
+
+import com.adventofcode.common.GridHelper;
+
+public class Position {
+  private int x;
+  private int y;
+
+  public Position(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
+
+  public void updatePosition(Velocity velocity, int width, int height){
+    // Update by velocity and teleport if not in boundaries
+    x = (x + velocity.getX()) % width;
+    y = (y + velocity.getY()) % height;
+
+    if(x < 0){
+      x += width;
+    }
+    if (y < 0){
+      y += height;
+    }
+  }
+
+  public int getX() {
+    return x;
+  }
+
+  public int getY() {
+    return y;
+  }
+
+  public void setX(int x) {
+    this.x = x;
+  }
+
+  public void setY(int y) {
+    this.y = y;
+  }
+
+  @Override
+  public String toString() {
+    return "Position{" + "x=" + x + ", y=" + y + '}';
+  }
+}
