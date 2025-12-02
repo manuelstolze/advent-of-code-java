@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("jacoco")
+    id("com.diffplug.spotless") version "8.0.0"
 }
 
 group = "org.example"
@@ -14,6 +15,12 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation ("org.assertj:assertj-core:3.26.0")
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
 }
 
 tasks.test {
