@@ -4,23 +4,23 @@ import java.util.List;
 
 public class QuadrantCounter {
 
-  public static int[] countInQuadrants(List<Robot> robots, int width, int height){
+  public static int[] countInQuadrants(List<Robot> robots, int width, int height) {
     int[] quadrantCounts = new int[4];
 
     int midX = width / 2;
     int midY = height / 2;
 
-    for (Robot robot: robots){
+    for (Robot robot : robots) {
       Position position = robot.getPosition();
       int x = position.getX();
       int y = position.getY();
 
       // Exclude robots on the middle lines
-      if (x == midX || y == midY){
+      if (x == midX || y == midY) {
         continue;
       }
 
-      if(x > midX && y < midY) {
+      if (x > midX && y < midY) {
         quadrantCounts[0]++; // Q1: Top-right
       } else if (x < midX && y < midY) {
         quadrantCounts[1]++; // Q2: Top-left

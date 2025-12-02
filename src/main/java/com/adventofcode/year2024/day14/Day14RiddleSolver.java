@@ -1,8 +1,5 @@
 package com.adventofcode.year2024.day14;
 
-import com.adventofcode.common.resolver.AbstractRiddleSolver;
-import com.adventofcode.year2024.day12.FenceCalculator;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +13,7 @@ public class Day14RiddleSolver {
 
     RoboterGrid grid = new RoboterGrid(width, height);
     grid.addRobots(robots);
-    grid.simulate(simulationTime,999);
+    grid.simulate(simulationTime, 999);
 
     grid.printGrid();
 
@@ -34,7 +31,7 @@ public class Day14RiddleSolver {
     grid.addRobots(robots);
     grid.simulate(simulationTime, 5);
 
-    //grid.printGrid();
+    // grid.printGrid();
     grid.printResults();
 
     int[] quadrantCounts = QuadrantCounter.countInQuadrants(robots, width, height);
@@ -59,5 +56,4 @@ public class Day14RiddleSolver {
     }
     return robots;
   }
-
 }

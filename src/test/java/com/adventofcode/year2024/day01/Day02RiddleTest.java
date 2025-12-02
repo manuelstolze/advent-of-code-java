@@ -1,18 +1,16 @@
 package com.adventofcode.year2024.day01;
 
-import com.adventofcode.year2024.day01.Day01Riddle;
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 public class Day02RiddleTest {
 
   Day01Riddle day01Riddle = new Day01Riddle();
 
   @Test
-    void testReadFileCorrectly() {
+  void testReadFileCorrectly() {
 
     List<Integer> list1 = new ArrayList<>();
     List<Integer> list2 = new ArrayList<>();
@@ -49,7 +47,7 @@ public class Day02RiddleTest {
   }
 
   @Test
-  void testCalculateTotalDistance(){
+  void testCalculateTotalDistance() {
     List<Integer> list1 = new ArrayList<>();
     List<Integer> list2 = new ArrayList<>();
 

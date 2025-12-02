@@ -2,7 +2,7 @@ package com.adventofcode.year2024.day13;
 
 import java.util.List;
 
-public class Day13RiddleSolver{
+public class Day13RiddleSolver {
 
   public int solveRiddleOne(List<ClawMachine> input) {
     PlayHall playHall = new PlayHall(input);
@@ -18,6 +18,4 @@ public class Day13RiddleSolver{
   public int solveRiddleTwo(List<ClawMachine> input) {
     return -1;
   }
-
-
 }

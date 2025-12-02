@@ -12,9 +12,9 @@ public class InstructionExtractor {
   private static final String NUMBER_REGEX = "\\d+";
 
   private static final Pattern MUL_PATTERN = Pattern.compile(MUL_REGEX);
-  private static final Pattern INSTRUCTION_PATTERN = Pattern.compile(MUL_REGEX + "|" + CONTROL_REGEX);
+  private static final Pattern INSTRUCTION_PATTERN =
+      Pattern.compile(MUL_REGEX + "|" + CONTROL_REGEX);
   private static final Pattern NUMBER_PATTERN = Pattern.compile(NUMBER_REGEX);
-
 
   public static List<List<Integer>> extract(String corruptedInstructions) {
     Matcher matcher = MUL_PATTERN.matcher(corruptedInstructions);

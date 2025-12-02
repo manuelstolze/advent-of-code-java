@@ -19,7 +19,7 @@ public class Day01Riddle {
     Collections.sort(list1);
     Collections.sort(list2);
 
-    System.out.println("Answer One: " +calculateTotalDistance(list1, list2));
+    System.out.println("Answer One: " + calculateTotalDistance(list1, list2));
   }
 
   public void solveRiddleTwo(String[] args) {
@@ -33,7 +33,6 @@ public class Day01Riddle {
 
     System.out.println("Answer Two: " + calculateTotalDistanceWithSimilarityScore(list1, list2));
   }
-
 
   public static void readFile(String filePath, List<Integer> list1, List<Integer> list2) {
     try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -65,7 +64,9 @@ public class Day01Riddle {
     int totalScore = 0;
 
     for (int list1value : list1) {
-      long similarityScore = list1value * list2.stream().filter(j -> j == list1value).count(); // to avoid multiply with zero
+      long similarityScore =
+          list1value
+              * list2.stream().filter(j -> j == list1value).count(); // to avoid multiply with zero
 
       totalScore += (int) similarityScore;
     }

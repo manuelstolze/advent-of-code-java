@@ -1,11 +1,9 @@
 package com.adventofcode.year2024.day09;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.adventofcode.common.AdventOfCodeFileReader;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Day09RiddleSolverTest {
   Day09RiddleSolver riddleSolver = new Day09RiddleSolver();
@@ -13,15 +11,16 @@ public class Day09RiddleSolverTest {
 
   @Test
   void testSolveRiddleOne() {
-    Long result = riddleSolver.solveRiddleOne(fileReader.readFile("src/test/resources/2024/09.txt"));
+    Long result =
+        riddleSolver.solveRiddleOne(fileReader.readFile("src/test/resources/2024/09.txt"));
     assertEquals(1928, result);
   }
 
   @Test
   void testSolveRiddleTwo() {
-    Long result = riddleSolver.solveRiddleTwo(fileReader.readFile("src/test/resources/2024/09.txt"));
+    Long result =
+        riddleSolver.solveRiddleTwo(fileReader.readFile("src/test/resources/2024/09.txt"));
     assertEquals(2858, result);
   }
-
   ;
 }

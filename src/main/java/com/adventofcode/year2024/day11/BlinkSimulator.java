@@ -7,7 +7,8 @@ public class BlinkSimulator {
   private final int blinkCount;
 
   public BlinkSimulator(List<Long> initialNumbers, int blinkCount) {
-    this.stoneLine = new StoneLine(initialNumbers);;
+    this.stoneLine = new StoneLine(initialNumbers);
+    ;
     this.blinkCount = blinkCount;
   }
 

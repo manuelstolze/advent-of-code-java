@@ -1,7 +1,6 @@
 package com.adventofcode.year2024.day03;
 
 import com.adventofcode.common.resolver.AbstractRiddleSolver;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class Day03Riddle extends AbstractRiddleSolver<List<String>> {
     return multiplyInstructions(instructions);
   }
 
-  private int multiplyInstructions(List<List<Integer>> instructions){
+  private int multiplyInstructions(List<List<Integer>> instructions) {
     int result = 0;
     for (List<Integer> instruction : instructions) {
       result += instruction.get(0) * instruction.get(1);

@@ -1,7 +1,6 @@
 package com.adventofcode.year2024.day05;
 
 import com.adventofcode.common.AdventOfCodeFileReader;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -51,7 +50,8 @@ public class Day05FileReader extends AdventOfCodeFileReader {
 
   private void parseUpdate(String line) {
     try {
-      List<Integer> update = Arrays.stream(line.split(UPDATES_DELIMITER))
+      List<Integer> update =
+          Arrays.stream(line.split(UPDATES_DELIMITER))
               .map(String::trim)
               .map(Integer::parseInt)
               .collect(Collectors.toList());

@@ -9,12 +9,12 @@ public class StoneLine {
   public StoneLine(List<Long> initialNumbers) {
     this.stones = new ArrayList<>();
 
-    for (Long number: initialNumbers) {
+    for (Long number : initialNumbers) {
       stones.add(new Stone(number));
     }
   }
 
-  void transform(){
+  void transform() {
     List<Stone> newStones = new ArrayList<>();
     for (Stone stone : stones) {
       newStones.addAll(stone.transform());
@@ -22,7 +22,7 @@ public class StoneLine {
     stones = newStones;
   }
 
-  int getCount(){
+  int getCount() {
     return stones.size();
   }
 }

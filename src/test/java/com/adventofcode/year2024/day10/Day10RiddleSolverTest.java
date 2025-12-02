@@ -1,9 +1,9 @@
 package com.adventofcode.year2024.day10;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.adventofcode.common.AdventOfCodeFileReader;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Day10RiddleSolverTest {
   Day10RiddleSolver riddleSolver = new Day10RiddleSolver();

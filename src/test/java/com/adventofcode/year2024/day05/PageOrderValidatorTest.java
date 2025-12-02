@@ -1,15 +1,11 @@
 package com.adventofcode.year2024.day05;
 
-import com.adventofcode.year2024.day05.PageOrderValidator;
-import com.adventofcode.year2024.day05.PageOrderingRules;
-import com.adventofcode.year2024.day05.PageUpdates;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class PageOrderValidatorTest {
 
@@ -26,9 +22,9 @@ class PageOrderValidatorTest {
 
   @Test
   void testIsValidUpdate_ValidUpdate() {
-    pageOrderingRules.addRule(1,2);
-    pageOrderingRules.addRule(1,3);
-    pageOrderingRules.addRule(2,3);
+    pageOrderingRules.addRule(1, 2);
+    pageOrderingRules.addRule(1, 3);
+    pageOrderingRules.addRule(2, 3);
     pageUpdates.addUpdate(List.of(1, 2, 3));
 
     // Call the method under test
@@ -40,9 +36,9 @@ class PageOrderValidatorTest {
 
   @Test
   void testIsValidUpdate_InvalidUpdate() {
-    pageOrderingRules.addRule(1,2);
-    pageOrderingRules.addRule(1,3);
-    pageOrderingRules.addRule(2,3);
+    pageOrderingRules.addRule(1, 2);
+    pageOrderingRules.addRule(1, 3);
+    pageOrderingRules.addRule(2, 3);
     pageUpdates.addUpdate(List.of(2, 1, 3));
 
     // Call the method under test
@@ -54,8 +50,8 @@ class PageOrderValidatorTest {
 
   @Test
   void testIsValidUpdate_UpdateWithUnrelatedPages() {
-    pageOrderingRules.addRule(1,2);
-    pageOrderingRules.addRule(1,3);
+    pageOrderingRules.addRule(1, 2);
+    pageOrderingRules.addRule(1, 3);
     pageUpdates.addUpdate(List.of(1, 2, 3, 4));
 
     // Call the method under test
@@ -67,14 +63,14 @@ class PageOrderValidatorTest {
 
   @Test
   void testGetCorrectedUpdatesSomeCorrections() {
-    pageOrderingRules.addRule(1,2);
-    pageOrderingRules.addRule(1,3);
-    pageOrderingRules.addRule(2,3);
+    pageOrderingRules.addRule(1, 2);
+    pageOrderingRules.addRule(1, 3);
+    pageOrderingRules.addRule(2, 3);
     pageUpdates.addUpdate(List.of(2, 1, 3));
 
     PageOrderValidator validator = new PageOrderValidator();
-    PageUpdates correctedUpdates = validator.getCorrectedUpdates(pageUpdates.getUpdates(), pageOrderingRules);
+    PageUpdates correctedUpdates =
+        validator.getCorrectedUpdates(pageUpdates.getUpdates(), pageOrderingRules);
     assertFalse(correctedUpdates.getUpdates().isEmpty());
-
   }
 }

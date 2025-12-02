@@ -7,7 +7,7 @@ public class PageOrderValidator {
   public boolean isValidUpdate(List<Integer> update, PageOrderingRules rules) {
     Map<Integer, Integer> positionMap = new HashMap<>();
 
-    for (int i = 0; i <update.size(); i++){
+    for (int i = 0; i < update.size(); i++) {
       positionMap.put(update.get(i), i);
     }
 
@@ -18,11 +18,10 @@ public class PageOrderValidator {
       Integer pageXPosition = positionMap.get(pageX);
       if (pageXPosition == null) continue;
 
-
       for (int pageY : pageYs) {
         Integer pageYPosition = positionMap.get(pageY);
 
-        if(pageYPosition != null && pageXPosition > pageYPosition){
+        if (pageYPosition != null && pageXPosition > pageYPosition) {
           return false;
         }
       }

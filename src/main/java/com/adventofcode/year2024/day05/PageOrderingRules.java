@@ -8,15 +8,15 @@ import java.util.Map;
 public class PageOrderingRules {
   private final Map<Integer, List<Integer>> rules;
 
-  public PageOrderingRules(){
+  public PageOrderingRules() {
     rules = new HashMap<>();
   }
 
-  public void addRule(int pageX, int pageY){
+  public void addRule(int pageX, int pageY) {
     rules.computeIfAbsent(pageX, key -> new ArrayList<>()).add(pageY);
   }
 
-  public Map<Integer, List<Integer>> getRules(){
+  public Map<Integer, List<Integer>> getRules() {
     return rules;
   }
 }

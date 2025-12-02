@@ -18,13 +18,12 @@ public class Disk {
       for (int j = 0; j < length; j++) {
         if (isFileBlock) {
           blocks.add(new FileBlock(fileId));
-        }
-        else {
+        } else {
           blocks.add(new FreeSpaceBlock());
         }
       }
 
-      if(isFileBlock) {
+      if (isFileBlock) {
         fileId++;
       }
     }
@@ -32,8 +31,8 @@ public class Disk {
 
   public void compact() {
     int leftmostFreeSpace = 0;
-     while (true) {
-       System.out.println(blocks);
+    while (true) {
+      System.out.println(blocks);
       int rightmostBlock = findRightmostBlock();
       if (rightmostBlock == -1) {
         break;
@@ -48,17 +47,17 @@ public class Disk {
     }
   }
 
-  public void compactByFiles(){
+  public void compactByFiles() {
     List<Integer> fileIds = getFileIdsInDescendingOrder();
 
-    for(int fileId : fileIds){
+    for (int fileId : fileIds) {
       int[] fileRange = findFileRange(fileId);
       int fileSize = fileRange[1] - fileRange[0] + 1;
 
       int freeStart = findFreeSpace(fileSize, fileRange[0]);
       if (freeStart != -1) {
         moveFile(fileId, fileRange, freeStart);
-        //printDiskState();
+        // printDiskState();
       }
     }
   }
@@ -78,7 +77,7 @@ public class Disk {
   }
 
   private int findRightmostBlock() {
-    for(int i = blocks.size() - 1; i >= 0; i--) {
+    for (int i = blocks.size() - 1; i >= 0; i--) {
       if (blocks.get(i).isFileBlock()) {
         return i;
       }
@@ -86,7 +85,7 @@ public class Disk {
     return -1; // No blocks found
   }
 
-  private int findLeftmostFreeSpace(int startIndex){
+  private int findLeftmostFreeSpace(int startIndex) {
     for (int i = startIndex; i < blocks.size(); i++) {
       if (blocks.get(i).isFreeSpaceBlock()) {
         return i;
@@ -106,7 +105,7 @@ public class Disk {
     return fileIds;
   }
 
-  private int[] findFileRange(int fileId){
+  private int[] findFileRange(int fileId) {
     int start = -1, end = -1;
     for (int i = 0; i < blocks.size(); i++) {
       if (blocks.get(i).isFileBlock() && blocks.get(i).getId() == fileId) {
@@ -116,39 +115,39 @@ public class Disk {
         end = i;
       }
     }
-    return new int[]{start, end};
+    return new int[] {start, end};
   }
 
-  private int findFreeSpace(int size, int start){
+  private int findFreeSpace(int size, int start) {
     int freeCount = 0, freeStart = -1;
 
-    for(int i = 0; i < blocks.size(); i++){
-      if(blocks.get(i).isFreeSpaceBlock()){
+    for (int i = 0; i < blocks.size(); i++) {
+      if (blocks.get(i).isFreeSpaceBlock()) {
 
-        if(freeCount == 0){
+        if (freeCount == 0) {
           freeStart = i;
         }
         freeCount++;
-        if(freeCount == size && freeStart <= start){
+        if (freeCount == size && freeStart <= start) {
           return freeStart;
         }
-      } else{
+      } else {
         freeCount = 0;
       }
     }
     return -1;
   }
 
-  private void moveFile(int fileId, int[] fileRange, int freeStart){
-     int fileSize = fileRange[1] - fileRange[0] + 1;
+  private void moveFile(int fileId, int[] fileRange, int freeStart) {
+    int fileSize = fileRange[1] - fileRange[0] + 1;
 
-     // Clear the old file range
-     for (int i = fileRange[0]; i <= fileRange[1]; i++) {
-       blocks.set(i, new FreeSpaceBlock());
-     }
+    // Clear the old file range
+    for (int i = fileRange[0]; i <= fileRange[1]; i++) {
+      blocks.set(i, new FreeSpaceBlock());
+    }
 
-     // Place file in the new range
-    for(int i = 0; i < fileSize; i++){
+    // Place file in the new range
+    for (int i = 0; i < fileSize; i++) {
       blocks.set(freeStart + i, new FileBlock(fileId));
     }
   }

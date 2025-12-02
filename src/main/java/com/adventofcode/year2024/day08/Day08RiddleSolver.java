@@ -1,7 +1,6 @@
 package com.adventofcode.year2024.day08;
 
 import com.adventofcode.common.resolver.AbstractRiddleSolver;
-
 import java.util.List;
 import java.util.Set;
 

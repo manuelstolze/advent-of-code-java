@@ -1,13 +1,9 @@
 package com.adventofcode.year2024.day05;
 
-import com.adventofcode.year2024.day05.Day05FileReader;
-import com.adventofcode.year2024.day05.Day05RiddleSolver;
-import com.adventofcode.year2024.day05.PageOrderingRules;
-import com.adventofcode.year2024.day05.PageUpdates;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.adventofcode.year2024.day05.record.Day05Input;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Day05RiddleSolverTest {
   Day05FileReader fileReader = new Day05FileReader();

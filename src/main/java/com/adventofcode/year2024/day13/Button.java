@@ -7,9 +7,9 @@ public class Button {
   private final int cost;
 
   public Button(int xDelta, int yDelta, int cost) {
-      this.xDelta = xDelta;
-      this.yDelta = yDelta;
-      this.cost = cost;
+    this.xDelta = xDelta;
+    this.yDelta = yDelta;
+    this.cost = cost;
   }
 
   public int getXDelta() {

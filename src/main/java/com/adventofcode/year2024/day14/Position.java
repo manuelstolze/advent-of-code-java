@@ -1,25 +1,23 @@
 package com.adventofcode.year2024.day14;
 
-import com.adventofcode.common.GridHelper;
-
 public class Position {
   private int x;
   private int y;
 
-  public Position(int x, int y){
+  public Position(int x, int y) {
     this.x = x;
     this.y = y;
   }
 
-  public void updatePosition(Velocity velocity, int width, int height){
+  public void updatePosition(Velocity velocity, int width, int height) {
     // Update by velocity and teleport if not in boundaries
     x = (x + velocity.getX()) % width;
     y = (y + velocity.getY()) % height;
 
-    if(x < 0){
+    if (x < 0) {
       x += width;
     }
-    if (y < 0){
+    if (y < 0) {
       y += height;
     }
   }

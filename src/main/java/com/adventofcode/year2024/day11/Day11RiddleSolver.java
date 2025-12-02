@@ -1,19 +1,13 @@
 package com.adventofcode.year2024.day11;
 
-import com.adventofcode.common.resolver.AbstractRiddleSolver;
-import com.adventofcode.year2024.day10.TopographicMap;
-import com.adventofcode.year2024.day10.TrailScorer;
-
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Day11RiddleSolver {
 
   public int solveRiddleOne(List<String> input) {
     int blinkCount = 25; // Number of blinks
-    List<Long> initialNumbers = Arrays.stream(input.get(0).split("\\s+"))
-            .map(Long::parseLong)
-            .toList();
+    List<Long> initialNumbers =
+        Arrays.stream(input.get(0).split("\\s+")).map(Long::parseLong).toList();
 
     BlinkSimulator simulator = new BlinkSimulator(initialNumbers, blinkCount);
 
@@ -22,11 +16,9 @@ public class Day11RiddleSolver {
     return simulator.getStoneCount();
   }
 
-
   public long solveRiddleTwo(List<String> input) {
-    List<Long> initialNumbers = Arrays.stream(input.get(0).split("\\s+"))
-            .map(Long::parseLong)
-            .toList();
+    List<Long> initialNumbers =
+        Arrays.stream(input.get(0).split("\\s+")).map(Long::parseLong).toList();
 
     Map<Long, Long> stoneCounts = new HashMap<>();
     for (Long number : initialNumbers) {

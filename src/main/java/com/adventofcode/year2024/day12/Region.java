@@ -23,7 +23,7 @@ public class Region {
   }
 
   public void addSide() {
-      sides++;
+    sides++;
   }
 
   public void incrementPerimeter() {
@@ -40,10 +40,13 @@ public class Region {
 
   @Override
   public String toString() {
-    return "Region{" +
-            "plantType=" + plantType +
-            ", area=" + area +
-            ", perimeter=" + perimeter +
-            '}';
+    return "Region{"
+        + "plantType="
+        + plantType
+        + ", area="
+        + area
+        + ", perimeter="
+        + perimeter
+        + '}';
   }
 }

@@ -2,7 +2,6 @@ package com.adventofcode.year2024.day05;
 
 import com.adventofcode.common.resolver.AbstractRiddleSolver;
 import com.adventofcode.year2024.day05.record.Day05Input;
-
 import java.util.List;
 
 public class Day05RiddleSolver extends AbstractRiddleSolver<Day05Input> {
@@ -13,7 +12,7 @@ public class Day05RiddleSolver extends AbstractRiddleSolver<Day05Input> {
     int count = 0;
     for (List<Integer> update : input.pageUpdates().getUpdates()) {
       if (pageOrderValidator.isValidUpdate(update, input.pageOrderingRules())) {
-        count+= getMiddleElement(update);
+        count += getMiddleElement(update);
       }
     }
     return count;
@@ -23,10 +22,12 @@ public class Day05RiddleSolver extends AbstractRiddleSolver<Day05Input> {
   public int solveRiddleTwo(Day05Input input) {
     int count = 0;
 
-    PageUpdates correctPageUpdates = pageOrderValidator.getCorrectedUpdates(input.pageUpdates().getUpdates(), input.pageOrderingRules());
+    PageUpdates correctPageUpdates =
+        pageOrderValidator.getCorrectedUpdates(
+            input.pageUpdates().getUpdates(), input.pageOrderingRules());
     for (List<Integer> update : correctPageUpdates.getUpdates()) {
       if (pageOrderValidator.isValidUpdate(update, input.pageOrderingRules())) {
-        count+= getMiddleElement(update);
+        count += getMiddleElement(update);
       }
     }
     return count;

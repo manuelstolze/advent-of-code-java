@@ -4,7 +4,7 @@ public class Velocity {
   private final int x;
   private final int y;
 
-  public Velocity(int x, int y){
+  public Velocity(int x, int y) {
     this.x = x;
     this.y = y;
   }

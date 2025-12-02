@@ -1,16 +1,13 @@
 package com.adventofcode.year2024.day13;
 
-import com.adventofcode.common.AdventOfCodeFileReader;
-import com.adventofcode.year2024.day12.Day12RiddleSolver;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class Day13RiddleSolverTest {
   Day13RiddleSolver riddleSolver = new Day13RiddleSolver();
@@ -71,5 +68,4 @@ public class Day13RiddleSolverTest {
     reader.close();
     return machines;
   }
-
 }

@@ -6,15 +6,14 @@ public class WordSearch {
   String targetWord;
   int targetWordLength;
 
-
-  public WordSearch(String targetWord){
+  public WordSearch(String targetWord) {
     this.targetWord = targetWord;
     this.targetWordLength = targetWord.length();
   }
 
   public boolean isWordPresent(char[][] grid, int row, int col, Direction direction) {
-    int dRow = Direction.getDirectionVectors(direction).getFirst();
-    int dCol = Direction.getDirectionVectors(direction).getLast();
+    int dRow = Direction.getDirectionVectors(direction).get(0);
+    int dCol = Direction.getDirectionVectors(direction).get(1);
 
     for (int i = 0; i < this.targetWordLength; i++) {
       int newRow = row + i * dRow;
@@ -46,7 +45,7 @@ public class WordSearch {
     return count;
   }
 
-  public int countWordsInXShape(char[][]grid ){
+  public int countWordsInXShape(char[][] grid) {
     int count = 0;
 
     for (int row = 0; row < grid.length; row++) {
@@ -54,7 +53,7 @@ public class WordSearch {
         count += checkForXMAS(grid, row, col);
       }
     }
-  return count;
+    return count;
   }
 
   private int checkForXMAS(char[][] grid, int row, int col) {
@@ -62,25 +61,35 @@ public class WordSearch {
 
     // Check if the center is 'A'
     if (grid[row][col] == 'A') {
-      if (isInBounds(grid, row - 1, col - 1) && isInBounds(grid, row - 1, col + 1) &&
-              isInBounds(grid, row + 1, col - 1) && isInBounds(grid, row + 1, col + 1)) {
-        if (grid[row - 1][col - 1] == 'M' && grid[row + 1][col + 1] == 'S' &&
-                grid[row + 1][col - 1] == 'M' && grid[row - 1][col + 1] == 'S') {
+      if (isInBounds(grid, row - 1, col - 1)
+          && isInBounds(grid, row - 1, col + 1)
+          && isInBounds(grid, row + 1, col - 1)
+          && isInBounds(grid, row + 1, col + 1)) {
+        if (grid[row - 1][col - 1] == 'M'
+            && grid[row + 1][col + 1] == 'S'
+            && grid[row + 1][col - 1] == 'M'
+            && grid[row - 1][col + 1] == 'S') {
           count++;
         }
 
-        if (grid[row - 1][col - 1] == 'M' && grid[row + 1][col + 1] == 'S' &&
-                grid[row + 1][col - 1] == 'S' && grid[row - 1][col + 1] == 'M') {
+        if (grid[row - 1][col - 1] == 'M'
+            && grid[row + 1][col + 1] == 'S'
+            && grid[row + 1][col - 1] == 'S'
+            && grid[row - 1][col + 1] == 'M') {
           count++;
         }
 
-        if (grid[row - 1][col - 1] == 'S' && grid[row + 1][col + 1] == 'M' &&
-                grid[row + 1][col - 1] == 'M' && grid[row - 1][col + 1] == 'S') {
+        if (grid[row - 1][col - 1] == 'S'
+            && grid[row + 1][col + 1] == 'M'
+            && grid[row + 1][col - 1] == 'M'
+            && grid[row - 1][col + 1] == 'S') {
           count++;
         }
 
-        if (grid[row - 1][col - 1] == 'S' && grid[row + 1][col + 1] == 'M' &&
-                grid[row + 1][col - 1] == 'S' && grid[row - 1][col + 1] == 'M') {
+        if (grid[row - 1][col - 1] == 'S'
+            && grid[row + 1][col + 1] == 'M'
+            && grid[row + 1][col - 1] == 'S'
+            && grid[row - 1][col + 1] == 'M') {
           count++;
         }
       }

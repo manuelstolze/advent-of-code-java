@@ -1,7 +1,6 @@
 package com.adventofcode.year2024.day04;
 
 import com.adventofcode.common.resolver.AbstractRiddleSolver;
-
 import java.util.List;
 
 public class Day04Riddle extends AbstractRiddleSolver<List<String>> {
@@ -23,7 +22,7 @@ public class Day04Riddle extends AbstractRiddleSolver<List<String>> {
     return wordSearch.countWordsInXShape(grid);
   }
 
-  private char[][] createGridFromFile(List<String> lines){
+  private char[][] createGridFromFile(List<String> lines) {
     InputConverter inputConverter = new InputConverter();
     return inputConverter.convertToCharGrid(lines);
   }

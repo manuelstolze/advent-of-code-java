@@ -15,8 +15,7 @@ public enum Direction {
   DIAGONAL_LEFT_UP,
   DIAGONAL_LEFT_DOWN;
 
-
-  public static List<Integer> getDirectionVectors(Direction direction){
+  public static List<Integer> getDirectionVectors(Direction direction) {
     switch (direction) {
       case HORIZONTAL_RIGHT:
         return new ArrayList<>(List.of(0, 1));

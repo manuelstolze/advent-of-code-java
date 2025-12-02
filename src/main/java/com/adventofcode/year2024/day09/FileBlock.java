@@ -1,6 +1,6 @@
 package com.adventofcode.year2024.day09;
 
-public class FileBlock extends Block{
+public class FileBlock extends Block {
   public FileBlock(int id) {
     super(id);
   }
@@ -9,6 +9,4 @@ public class FileBlock extends Block{
   public String toString() {
     return String.valueOf(id);
   }
-
-
 }

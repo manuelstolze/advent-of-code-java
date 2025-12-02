@@ -1,10 +1,9 @@
 package com.adventofcode.year2024.day09;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class DiskTest {
 
@@ -22,7 +21,7 @@ public class DiskTest {
   @Test
   void testCompact() {
     Disk disk = new Disk();
-    List<Integer> lengths = List.of(1,2,3,4,5);
+    List<Integer> lengths = List.of(1, 2, 3, 4, 5);
     disk.generateInitialBlocks(lengths);
     disk.compact();
     assertEquals(15, disk.getBlocks().size());

@@ -1,7 +1,6 @@
 package com.adventofcode.year2024.day02;
 
 import com.adventofcode.common.AdventOfCodeFileReader;
-
 import java.util.List;
 
 public class RiddleRunner {

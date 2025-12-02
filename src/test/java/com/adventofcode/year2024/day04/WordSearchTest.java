@@ -1,18 +1,18 @@
 package com.adventofcode.year2024.day04;
 
-import com.adventofcode.year2024.day04.WordSearch;
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.adventofcode.common.Direction;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 class WordSearchTest {
 
   @Test
   void testIsWordPresent() {
     char[][] grid = {
-            {'C', 'O', 'D', 'E'},
-            {'A', 'B', 'C', 'D'},
-            {'D', 'E', 'F', 'G'}
+      {'C', 'O', 'D', 'E'},
+      {'A', 'B', 'C', 'D'},
+      {'D', 'E', 'F', 'G'}
     };
     WordSearch wordSearch = new WordSearch("CODE");
     assertTrue(wordSearch.isWordPresent(grid, 0, 0, Direction.HORIZONTAL_RIGHT));
@@ -22,9 +22,9 @@ class WordSearchTest {
   @Test
   void testIsWordPresentAtEdge() {
     char[][] grid = {
-            {'C', 'O', 'D', 'E'},
-            {'G', 'F', 'E', 'D'},
-            {'D', 'E', 'F', 'G'}
+      {'C', 'O', 'D', 'E'},
+      {'G', 'F', 'E', 'D'},
+      {'D', 'E', 'F', 'G'}
     };
     WordSearch wordSearch = new WordSearch("DEFG");
     assertTrue(wordSearch.isWordPresent(grid, 2, 0, Direction.HORIZONTAL_RIGHT));
@@ -35,9 +35,9 @@ class WordSearchTest {
   @Test
   void testCountWordOccurrences() {
     char[][] grid = {
-            {'C', 'O', 'D', 'E'},
-            {'A', 'B', 'C', 'D'},
-            {'D', 'E', 'F', 'G'}
+      {'C', 'O', 'D', 'E'},
+      {'A', 'B', 'C', 'D'},
+      {'D', 'E', 'F', 'G'}
     };
     WordSearch wordSearch = new WordSearch("CD");
     assertEquals(2, wordSearch.countWordOccurrences(grid));
@@ -46,9 +46,9 @@ class WordSearchTest {
   @Test
   void testCountWordOccurrencesNoMatch() {
     char[][] grid = {
-            {'C', 'O', 'D', 'E'},
-            {'A', 'B', 'C', 'D'},
-            {'D', 'E', 'F', 'G'}
+      {'C', 'O', 'D', 'E'},
+      {'A', 'B', 'C', 'D'},
+      {'D', 'E', 'F', 'G'}
     };
     WordSearch wordSearch = new WordSearch("XYZ");
     assertEquals(0, wordSearch.countWordOccurrences(grid));
@@ -57,9 +57,9 @@ class WordSearchTest {
   @Test
   void testCountWordOccurrencesWithDifferentDirections() {
     char[][] grid = {
-            {'C', 'O', 'D', 'E'},
-            {'O', 'C', 'O', 'D'},
-            {'D', 'O', 'C', 'O'}
+      {'C', 'O', 'D', 'E'},
+      {'O', 'C', 'O', 'D'},
+      {'D', 'O', 'C', 'O'}
     };
     WordSearch wordSearch = new WordSearch("COD");
     assertEquals(5, wordSearch.countWordOccurrences(grid)); // Horizontal, Vertical, Diagonal

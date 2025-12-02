@@ -9,18 +9,17 @@ public class HikingTrail {
   final int TARGET_HEIGHT = 9;
 
   // BFS to get all trails
-  public int exploreTrailsFrom(int startX, int startY, TopographicMap map){
+  public int exploreTrailsFrom(int startX, int startY, TopographicMap map) {
     Queue<int[]> queue = new LinkedList<>();
     boolean[][] visited = new boolean[map.getRows()][map.getColumns()];
     int numberOfReachableTops = 0;
 
-
-    queue.add(new int[]{startX, startY});
+    queue.add(new int[] {startX, startY});
 
     visited[startX][startY] = true;
 
-    while (!queue.isEmpty()){
-      int [] current = queue.poll();
+    while (!queue.isEmpty()) {
+      int[] current = queue.poll();
       int x = current[0];
       int y = current[1];
 
@@ -31,21 +30,21 @@ public class HikingTrail {
         continue;
       }
 
-      for (int[] direction: getDirections()){
+      for (int[] direction : getDirections()) {
         int newX = x + direction[0];
         int newY = y + direction[1];
 
-        if (map.isValidPosition(newX, newY) && !visited[newX][newY]){
+        if (map.isValidPosition(newX, newY) && !visited[newX][newY]) {
           int nextHeight = map.getHeightAt(newX, newY);
 
-          if (nextHeight == currentHeight +1){
-            queue.add(new int[]{newX, newY});
+          if (nextHeight == currentHeight + 1) {
+            queue.add(new int[] {newX, newY});
             visited[newX][newY] = true;
           }
         }
       }
     }
-    return  numberOfReachableTops;
+    return numberOfReachableTops;
   }
 
   public int exploreDistinctTrailsFrom(int startX, int startY, TopographicMap map) {
@@ -80,10 +79,10 @@ public class HikingTrail {
 
   private List<int[]> getDirections() {
     return Arrays.asList(
-            new int[]{-1, 0}, // Up
-            new int[]{1, 0},  // Down
-            new int[]{0, -1}, // Left
-            new int[]{0, 1}   // Right
-    );
+        new int[] {-1, 0}, // Up
+        new int[] {1, 0}, // Down
+        new int[] {0, -1}, // Left
+        new int[] {0, 1} // Right
+        );
   }
 }

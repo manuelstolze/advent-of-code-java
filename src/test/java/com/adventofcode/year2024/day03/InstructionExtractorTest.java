@@ -1,11 +1,9 @@
 package com.adventofcode.year2024.day03;
 
 import com.adventofcode.common.AdventOfCodeFileReader;
-import com.adventofcode.year2024.day03.InstructionExtractor;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 public class InstructionExtractorTest {
 
@@ -33,7 +31,8 @@ public class InstructionExtractorTest {
     fileContent = fileReader.readFile("src/test/resources/2024/03_02.txt");
 
     String instruction = fileContent.getFirst();
-    List<List<Integer>> instructions = InstructionExtractor.extractOnlyEnabledInstructions(instruction);
+    List<List<Integer>> instructions =
+        InstructionExtractor.extractOnlyEnabledInstructions(instruction);
 
     assert instructions.size() == 2;
     assert instructions.get(0).get(0).equals(2);

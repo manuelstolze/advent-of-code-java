@@ -8,13 +8,15 @@ public class Day07RiddleSolver {
   private static boolean canBeTrue(long testValue, long[] nums) {
     List<String> operators = List.of("+", "*");
     List<String> combinations = generateCombinations(operators, nums.length - 1);
-    return combinations.stream().anyMatch(combination -> evaluateExpression(nums, combination) == testValue);
+    return combinations.stream()
+        .anyMatch(combination -> evaluateExpression(nums, combination) == testValue);
   }
 
   private static boolean canBeTrueWithConcatenation(long testValue, long[] nums) {
     List<String> operators = List.of("+", "*", "||");
     List<String> combinations = generateCombinations(operators, nums.length - 1);
-    return combinations.stream().anyMatch(combination -> evaluateExpression(nums, combination) == testValue);
+    return combinations.stream()
+        .anyMatch(combination -> evaluateExpression(nums, combination) == testValue);
   }
 
   private static long evaluateExpression(long[] nums, String combination) {
@@ -57,7 +59,8 @@ public class Day07RiddleSolver {
     return combinations;
   }
 
-  private static void generateCombinationsHelper(List<String> operators, String current, int length, List<String> combinations) {
+  private static void generateCombinationsHelper(
+      List<String> operators, String current, int length, List<String> combinations) {
     if (length == 0) {
       combinations.add(current);
       return;

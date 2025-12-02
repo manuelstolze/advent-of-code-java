@@ -14,32 +14,36 @@ public class GardenPlot {
   }
 
   public char getPlantType() {
-      return plantType;
+    return plantType;
   }
 
   public int getX() {
-      return x;
+    return x;
   }
 
   public int getY() {
-      return y;
+    return y;
   }
 
   public boolean isVisited() {
-      return visited;
+    return visited;
   }
 
   public void setVisited(boolean visited) {
-      this.visited = visited;
+    this.visited = visited;
   }
 
   @Override
   public String toString() {
-    return "GardenPlot{" +
-            "plantType=" + plantType +
-            ", visited=" + visited +
-            ", x=" + x +
-            ", y=" + y +
-            '}';
+    return "GardenPlot{"
+        + "plantType="
+        + plantType
+        + ", visited="
+        + visited
+        + ", x="
+        + x
+        + ", y="
+        + y
+        + '}';
   }
 }

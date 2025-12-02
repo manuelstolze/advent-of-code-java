@@ -1,7 +1,5 @@
 package com.adventofcode.year2024.day09;
 
-import com.adventofcode.common.resolver.AbstractRiddleSolver;
-
 import java.util.List;
 
 public class Day09RiddleSolver {
@@ -12,9 +10,7 @@ public class Day09RiddleSolver {
     disk.compact();
 
     return disk.checkSum();
-
   }
-
 
   public Long solveRiddleTwo(List<String> input) {
     Disk disk = new Disk();

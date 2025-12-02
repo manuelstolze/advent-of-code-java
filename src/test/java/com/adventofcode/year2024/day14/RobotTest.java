@@ -1,14 +1,14 @@
 package com.adventofcode.year2024.day14;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class RobotTest {
 
   @Test
-  void updateRobotPositionInBoundary(){
-    Robot robot = new Robot(new Position(2,3), new Velocity(-1, 6));
+  void updateRobotPositionInBoundary() {
+    Robot robot = new Robot(new Position(2, 3), new Velocity(-1, 6));
     robot.move(20, 20);
 
     assertEquals(1, robot.getPosition().getX());
@@ -16,8 +16,8 @@ public class RobotTest {
   }
 
   @Test
-  void updateRobotPositionNotInBoundary(){
-    Robot robot = new Robot(new Position(2,3), new Velocity(-3, 19));
+  void updateRobotPositionNotInBoundary() {
+    Robot robot = new Robot(new Position(2, 3), new Velocity(-3, 19));
     robot.move(20, 20);
 
     assertEquals(19, robot.getPosition().getX());

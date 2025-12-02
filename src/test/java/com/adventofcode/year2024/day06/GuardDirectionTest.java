@@ -1,9 +1,8 @@
 package com.adventofcode.year2024.day06;
 
-import com.adventofcode.year2024.day06.GuardDirection;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 class GuardDirectionTest {
 

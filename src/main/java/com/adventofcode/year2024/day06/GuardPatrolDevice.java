@@ -15,10 +15,10 @@ public class GuardPatrolDevice {
     this.guard = this.addGuard();
   }
 
-  public void simulatePatrol(){
+  public void simulatePatrol() {
     boolean breaker = false;
 
-    while(isWithinBounds(guard.getPosition()) && !breaker){
+    while (isWithinBounds(guard.getPosition()) && !breaker) {
       try {
         visitedPositions.add(guard.getPosition().getX() + "," + guard.getPosition().getY());
 
@@ -31,10 +31,9 @@ public class GuardPatrolDevice {
           case RIGHT -> y++;
         }
 
-        if (!isWithinBounds(new GuardPosition(x, y, guard.getPosition().getDirection()))){
+        if (!isWithinBounds(new GuardPosition(x, y, guard.getPosition().getDirection()))) {
           break;
         }
-
 
         if (isObstacleInFront()) {
           guard.getPosition().turnRight();
@@ -48,9 +47,12 @@ public class GuardPatrolDevice {
     }
   }
 
-  private boolean isWithinBounds(GuardPosition position){
-    return position.getX() >= 0 && position.getX() < map[0].length &&
-            position.getY() >= 0 && position.getY() < map.length; }
+  private boolean isWithinBounds(GuardPosition position) {
+    return position.getX() >= 0
+        && position.getX() < map[0].length
+        && position.getY() >= 0
+        && position.getY() < map.length;
+  }
 
   private boolean isObstacleInFront() {
     int x = guard.getPosition().getX();
@@ -65,7 +67,7 @@ public class GuardPatrolDevice {
     return x >= map[0].length || y >= map.length || map[x][y] == '#';
   }
 
-  public char[][] convertStringListToGrid(List<String> input){
+  public char[][] convertStringListToGrid(List<String> input) {
     char[][] grid = new char[input.size()][input.get(0).length()];
     for (int row = 0; row < input.size(); row++) {
       for (int col = 0; col < input.get(row).length(); col++) {
@@ -79,27 +81,30 @@ public class GuardPatrolDevice {
     return visitedPositions;
   }
 
-  public Guard getGuard(){
+  public Guard getGuard() {
     return this.guard;
   }
 
-  public char[][] getMap(){
+  public char[][] getMap() {
     return this.map;
   }
 
-  public GuardPosition getCurrentGuardPosition(){
-      for (int row = 0; row < this.map.length; row++) {
+  public GuardPosition getCurrentGuardPosition() {
+    for (int row = 0; row < this.map.length; row++) {
       for (int col = 0; col < this.map[row].length; col++) {
-          if(this.map[row][col] == '^' || this.map[row][col] == 'v' || this.map[row][col] == '<' || this.map[row][col] == '>'){
-            GuardDirection direction = GuardDirection.getDirectionByChar(this.map[row][col]);
-            return new GuardPosition(row, col, direction);
-          }
+        if (this.map[row][col] == '^'
+            || this.map[row][col] == 'v'
+            || this.map[row][col] == '<'
+            || this.map[row][col] == '>') {
+          GuardDirection direction = GuardDirection.getDirectionByChar(this.map[row][col]);
+          return new GuardPosition(row, col, direction);
         }
       }
-      throw new RuntimeException("No guard found");
+    }
+    throw new RuntimeException("No guard found");
   }
 
-  private Guard addGuard(){
+  private Guard addGuard() {
     GuardPosition position = getCurrentGuardPosition();
     return new Guard(position);
   }

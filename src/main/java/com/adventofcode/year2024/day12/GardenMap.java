@@ -35,7 +35,7 @@ public class GardenMap {
     }
   }
 
-  public void detectRegionsWithSides(){
+  public void detectRegionsWithSides() {
     for (int i = 0; i < map.length; i++) {
       for (int j = 0; j < map[0].length; j++) {
         GardenPlot plot = map[i][j];
@@ -61,7 +61,7 @@ public class GardenMap {
       region.addPlot(current);
 
       // Check all 4 neighbors
-      for (int[] direction : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
+      for (int[] direction : new int[][] {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
         int newX = current.getX() + direction[0];
         int newY = current.getY() + direction[1];
 
@@ -85,7 +85,7 @@ public class GardenMap {
   }
 
   // Explore a region starting from a given plot (using DFS)
-  private Region exploreRegionWithSides(GardenPlot startPlot){
+  private Region exploreRegionWithSides(GardenPlot startPlot) {
     char plantType = startPlot.getPlantType();
     Region region = new Region(plantType);
 
@@ -98,7 +98,7 @@ public class GardenMap {
       region.addPlot(current);
 
       // Check all 4 neighbors
-      for (int[] direction : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
+      for (int[] direction : new int[][] {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) {
         int newX = current.getX() + direction[0];
         int newY = current.getY() + direction[1];
 

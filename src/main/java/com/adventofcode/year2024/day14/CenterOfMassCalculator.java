@@ -6,7 +6,6 @@ public class CenterOfMassCalculator {
   private static final int[] DIRECTIONS_X = {0, 0, 1, -1, 1, -1, 1, -1};
   private static final int[] DIRECTIONS_Y = {1, -1, 0, 0, 1, 1, -1, -1};
 
-
   public static Result findLargestCluster(int[][] grid) {
     int rows = grid.length;
     int cols = grid[0].length;

@@ -1,14 +1,10 @@
 package com.adventofcode.year2024.day05;
 
-import com.adventofcode.year2024.day05.Day05FileReader;
-import com.adventofcode.year2024.day05.PageOrderingRules;
-import com.adventofcode.year2024.day05.PageUpdates;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class Day05FileReaderTest {
 
@@ -34,7 +30,7 @@ class Day05FileReaderTest {
   }
 
   @Test
-   void testGetPageUpdates(){
+  void testGetPageUpdates() {
     fileReader.readFile(testFilePath);
     PageUpdates expectedPageUpdates = new PageUpdates();
     expectedPageUpdates.addUpdate(List.of(75, 47, 61, 53, 29));

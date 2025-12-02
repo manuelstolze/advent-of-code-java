@@ -6,15 +6,15 @@ public class PlayHall {
   List<ClawMachine> machines;
 
   public PlayHall(List<ClawMachine> machines) {
-      this.machines = machines;
+    this.machines = machines;
   }
 
-  public int calculateMinimumTokens(){
+  public int calculateMinimumTokens() {
     int totalTokens = 0;
 
     for (ClawMachine machine : machines) {
       int tokens = machine.calculateMinimumTokens();
-      if (tokens != -1){
+      if (tokens != -1) {
         totalTokens += tokens;
       }
     }
@@ -22,11 +22,11 @@ public class PlayHall {
     return totalTokens;
   }
 
-  public int countWinnablePrizes(){
+  public int countWinnablePrizes() {
     int count = 0;
 
     for (ClawMachine machine : machines) {
-      if (machine.calculateMinimumTokens() != -1){
+      if (machine.calculateMinimumTokens() != -1) {
         count++;
       }
     }

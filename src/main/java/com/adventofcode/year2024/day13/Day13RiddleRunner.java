@@ -1,7 +1,5 @@
 package com.adventofcode.year2024.day13;
 
-import com.adventofcode.common.AdventOfCodeFileReader;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

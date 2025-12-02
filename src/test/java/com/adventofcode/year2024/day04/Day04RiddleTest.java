@@ -1,18 +1,15 @@
 package com.adventofcode.year2024.day04;
 
-import com.adventofcode.common.AdventOfCodeFileReader;
-import com.adventofcode.year2024.day04.Day04Riddle;
-import org.junit.jupiter.api.Test;
-
-import java.util.List;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+import com.adventofcode.common.AdventOfCodeFileReader;
+import java.util.List;
+import org.junit.jupiter.api.Test;
 
 public class Day04RiddleTest {
 
   AdventOfCodeFileReader fileReader = new AdventOfCodeFileReader();
   Day04Riddle riddle = new Day04Riddle();
-
 
   @Test
   void testSolveRiddleOne() {
@@ -30,5 +27,4 @@ public class Day04RiddleTest {
     int result = riddle.solveRiddleTwo(lines);
     assertThat(result).isEqualTo(9);
   }
-
 }

@@ -1,14 +1,10 @@
 package com.adventofcode.year2024.day06;
 
-import com.adventofcode.year2024.day06.GuardPatrolDevice;
-import com.adventofcode.year2024.day06.GuardDirection;
-import com.adventofcode.year2024.day06.GuardPosition;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class GuardAvoidingDeviceTest {
 

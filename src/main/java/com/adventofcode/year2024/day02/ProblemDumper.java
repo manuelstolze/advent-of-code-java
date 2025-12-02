@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ProblemDumper {
 
-  public static boolean isSave(List<Integer> list){
+  public static boolean isSave(List<Integer> list) {
     return isIncreasing(list) || isDecreasing(list);
   }
 

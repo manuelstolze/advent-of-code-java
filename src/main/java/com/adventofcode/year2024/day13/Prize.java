@@ -6,8 +6,8 @@ public class Prize {
   private final int yPosition;
 
   public Prize(int xPosition, int yPosition) {
-      this.xPosition = xPosition;
-      this.yPosition = yPosition;
+    this.xPosition = xPosition;
+    this.yPosition = yPosition;
   }
 
   public int getXPosition() {

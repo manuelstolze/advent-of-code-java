@@ -9,7 +9,8 @@ public class Day05RiddleRunner {
     Day05FileReader fileReader = new Day05FileReader();
 
     fileReader.readFile("src/main/resources/2024/05.txt");
-    Day05Input input = new Day05Input(fileReader.getPageOrderingRules(), fileReader.getPageUpdates());
+    Day05Input input =
+        new Day05Input(fileReader.getPageOrderingRules(), fileReader.getPageUpdates());
 
     System.out.println("Answer One: " + riddle.solveRiddleOne(input));
     System.out.println("Answer Two: " + riddle.solveRiddleTwo(input));

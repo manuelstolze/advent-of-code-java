@@ -8,13 +8,13 @@ public class TopographicMap {
   private final int rows;
   private final int columns;
 
-  public TopographicMap(int[][] map){
+  public TopographicMap(int[][] map) {
     this.heightMap = map;
     this.rows = heightMap.length;
     this.columns = heightMap[0].length;
   }
 
-  int getHeightAt(int x, int y){
+  int getHeightAt(int x, int y) {
     if (isValidPosition(x, y)) {
       return heightMap[x][y];
     }
@@ -30,7 +30,7 @@ public class TopographicMap {
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < columns; j++) {
         if (heightMap[i][j] == 0) {
-          trailheads.add(new int[]{i, j});
+          trailheads.add(new int[] {i, j});
         }
       }
     }
@@ -50,7 +50,8 @@ public class TopographicMap {
   public int getRows() {
     return rows;
   }
-  public int getColumns(){
+
+  public int getColumns() {
     return columns;
   }
 }

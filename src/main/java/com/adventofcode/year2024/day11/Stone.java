@@ -10,13 +10,12 @@ public class Stone {
     this.number = number;
   }
 
-  List<Stone> transform(){
+  List<Stone> transform() {
     List<Stone> changes = new ArrayList<>();
 
-    if (number == 0){
+    if (number == 0) {
       changes.add(new Stone(1L));
-    }
-    else if (hasEvenNumberOfDigits(number)){
+    } else if (hasEvenNumberOfDigits(number)) {
       String numStr = Long.toString(number);
       int mid = numStr.length() / 2;
       int left = Integer.parseInt(numStr.substring(0, mid));
@@ -24,8 +23,7 @@ public class Stone {
 
       changes.add(new Stone((long) left));
       changes.add(new Stone((long) right));
-    }
-    else {
+    } else {
       changes.add(new Stone(number * 2024));
     }
     return changes;
