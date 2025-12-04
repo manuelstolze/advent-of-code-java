@@ -4,7 +4,7 @@ plugins {
     id("com.diffplug.spotless") version "8.0.0"
 }
 
-group = "org.example"
+group = "manuelstolze.adventofcode"
 version = "1.0-SNAPSHOT"
 
 repositories {
