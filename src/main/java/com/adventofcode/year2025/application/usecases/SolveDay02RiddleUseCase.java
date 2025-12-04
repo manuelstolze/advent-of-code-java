@@ -6,7 +6,6 @@ import com.adventofcode.year2025.domain.ProductRanges;
 import com.adventofcode.year2025.domain.RiddleUseCase;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.LongStream;
