@@ -75,9 +75,9 @@ public class SolveDay02RiddleUseCase implements RiddleUseCase<Long> {
 
         // Create numbers by repeating the block and add them to the set
         LongStream.range(start, end + 1)
-                .mapToObj(value -> String.valueOf(value).repeat(repeat))
-                .map(Long::parseLong)
-                .forEach(repeatingNumbers::add);
+            .mapToObj(value -> String.valueOf(value).repeat(repeat))
+            .map(Long::parseLong)
+            .forEach(repeatingNumbers::add);
       }
     }
 
