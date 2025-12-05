@@ -23,7 +23,7 @@ public class AdventOfCodeApplication {
 
     System.out.println("\nDay " + day++ + ":");
     new SolveDay03RiddleUseCase(
-            new BufferedReader(new FileReader("src/test/resources/2025/03.txt")))
+            new BufferedReader(new FileReader("src/main/resources/2025/03.txt")))
         .solveRiddles();
   }
 }

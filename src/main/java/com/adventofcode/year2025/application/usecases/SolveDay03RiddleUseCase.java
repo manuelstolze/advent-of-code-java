@@ -6,35 +6,30 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class SolveDay03RiddleUseCase implements RiddleUseCase<Integer> {
   final List<BatteryBank> batteryBanks = new ArrayList<>();
 
   public SolveDay03RiddleUseCase(BufferedReader reader) throws IOException {
-    String fline;
-    while ((fline = reader.readLine()) != null) {
-
-      String finalFline = fline;
-      var s =
-          IntStream.range(0, fline.length()) // Stream von Indizes
-              .mapToObj(
-                  i -> new BatteryBank.Battery(i, finalFline.charAt(i) - '0')) // index + charge
-              .toList();
-
-      batteryBanks.add(BatteryBank.initializeBatteryBank(s));
-    }
+    reader
+        .lines()
+        .map(this::parseLineToBatteryList)
+        .map(BatteryBank::initializeBatteryBank)
+        .forEach(batteryBanks::add);
   }
 
   @Override
   public Integer solveRiddleOne() {
-    // Implementation for riddle one
-    return null;
+    return batteryBanks.stream().map(BatteryBank::getProvidedJoltage).reduce(0, Integer::sum);
   }
 
   @Override
   public Integer solveRiddleTwo() {
     // Implementation for riddle two
     return null;
+  }
+
+  private List<BatteryBank.Battery> parseLineToBatteryList(String line) {
+    return line.chars().mapToObj(c -> new BatteryBank.Battery(c - '0')).toList();
   }
 }
