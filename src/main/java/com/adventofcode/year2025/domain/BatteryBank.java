@@ -4,19 +4,19 @@ import java.util.List;
 
 public class BatteryBank {
 
+  final int MAX_DIGIT_COUNT = 2;
+  final int MAX_DIGIT_COUNT_LIMIT_OVERRIDE = 12;
+
   private final List<Battery> batteries;
   private final int providedJoltage;
 
+  long providedJoltageWithLimitOverride = 0;
+
   private BatteryBank(List<Battery> batteries) {
     this.batteries = batteries;
-
-    final int firstBatteryIndex = getMaxJoltageBattery(0, batteries.size() - 1);
-    final int secondBatteryIndex = getMaxJoltageBattery(firstBatteryIndex + 1, batteries.size());
-    final String max =
-        batteries.get(firstBatteryIndex).charge
-            + String.valueOf(batteries.get(secondBatteryIndex).charge);
-
-    this.providedJoltage = Integer.parseInt(max);
+    this.providedJoltage = Integer.parseInt(computeJoltageAsString(MAX_DIGIT_COUNT, batteries));
+    this.providedJoltageWithLimitOverride =
+        Long.parseLong(computeJoltageAsString(MAX_DIGIT_COUNT_LIMIT_OVERRIDE, batteries));
   }
 
   public static BatteryBank initializeBatteryBank(List<Battery> batteries) {
@@ -41,8 +41,26 @@ public class BatteryBank {
     return maxIndex;
   }
 
+  private String computeJoltageAsString(int digitCount, List<Battery> batteries) {
+    StringBuilder sb = new StringBuilder(digitCount);
+    int previousDigitIndex = -1;
+
+    for (int i = digitCount - 1; i >= 0; i--) {
+      int maxIndex = getMaxJoltageBattery(previousDigitIndex + 1, batteries.size() - i);
+      previousDigitIndex = maxIndex;
+
+      sb.append(batteries.get(maxIndex).charge());
+    }
+
+    return sb.toString();
+  }
+
   public int getProvidedJoltage() {
     return providedJoltage;
+  }
+
+  public Long getProvidedJoltageWithLimitOverride() {
+    return providedJoltageWithLimitOverride;
   }
 
   public record Battery(int charge) {
