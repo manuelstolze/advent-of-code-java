@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolveDay03RiddleUseCase implements RiddleUseCase<Integer> {
+public class SolveDay03RiddleUseCase implements RiddleUseCase<Integer, Long> {
   final List<BatteryBank> batteryBanks = new ArrayList<>();
 
   public SolveDay03RiddleUseCase(BufferedReader reader) throws IOException {
@@ -24,9 +24,10 @@ public class SolveDay03RiddleUseCase implements RiddleUseCase<Integer> {
   }
 
   @Override
-  public Integer solveRiddleTwo() {
-    // Implementation for riddle two
-    return null;
+  public Long solveRiddleTwo() {
+    return batteryBanks.stream()
+        .map(BatteryBank::getProvidedJoltageWithLimitOverride)
+        .reduce(0L, Long::sum);
   }
 
   private List<BatteryBank.Battery> parseLineToBatteryList(String line) {

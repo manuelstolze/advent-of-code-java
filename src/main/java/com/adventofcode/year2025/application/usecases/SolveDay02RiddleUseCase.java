@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.LongStream;
 
-public class SolveDay02RiddleUseCase implements RiddleUseCase<Long> {
+public class SolveDay02RiddleUseCase implements RiddleUseCase<Long, Long> {
 
   private final ProductRanges productRanges;
 
