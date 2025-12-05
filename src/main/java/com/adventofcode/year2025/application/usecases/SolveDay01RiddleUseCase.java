@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-public class SolveDay01RiddleUseCase implements RiddleUseCase<Integer> {
+public class SolveDay01RiddleUseCase implements RiddleUseCase<Integer, Integer> {
 
   private static final int STARTING_DIAL_POS = 50;
 

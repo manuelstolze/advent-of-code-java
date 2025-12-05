@@ -1,10 +1,10 @@
 package com.adventofcode.year2025.domain;
 
-public interface RiddleUseCase<T> {
+public interface RiddleUseCase<T, K> {
 
   T solveRiddleOne();
 
-  T solveRiddleTwo();
+  K solveRiddleTwo();
 
   default void solveRiddles() {
     System.out.println("Solution of Riddle One: " + solveRiddleOne());
